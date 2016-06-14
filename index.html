@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name ="viewport" content ="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">  
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="renderer" content="webkit">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="apple-mobile-web-app-capable" content="yes" /><!-- 是否启用 WebApp 全屏模式 -->  
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /><!-- 设置状态栏的背景颜色 -->  
+	<title>抢双倍红包</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="hongbao_box">
+	<div class="banner"><img src="images/banner.png" alt=""></div>
+	<div class="inner_bouble_type_choose">
+		<label for="rujin" ><input type="radio" name="type" id="rujin" class="label_checked" checked="checked"><span class="fs18">入金</span></label>
+		<label for="trade"><input type="radio" name="type" id="trade"><span class="fs18">交易</span></label>
+	</div>
+	<div class="hongnbao_num fs16">
+		<span class="hongnbao_num_left">存续<br>金额</span>
+		<input type="text" name="" id="" value="入金和交易总额" class="hongnbao_num_input" onFocus="if(this.value == '入金和交易总额'){this.value = ''}" onBlur="if(this.value == ''){this.value= '入金和交易总额'}">
+		<div class="hongnbao_num_sum">
+			<span class="hongnbao_num_sum_word fs20">0</span>
+			<span>元</span>
+		</div>
+	</div>
+	<a href="javascript:;" class="hongbao_link_bg1">
+		<img src="images/hongbao.png" alt=""> 
+		<span class="fs20">立即预存</span>
+	</a>
+
+	<div class="hongbao_tip fs12">福利按12天计算，数据仅供参考，以系统实际核算为准。</div>
+	<div class="hongbao_rules fs14">
+		<div class="hongbao_rules_head">
+			<span class="hongbao_rules_head_cube"></span>
+			<span class="hongbao_rules_head_word">活动详情</span>
+			<span class="hongbao_rules_head_line"></span>
+		</div>
+		<div class="hongbao_rules_contain">
+			<p>
+				<span class="fsbd">1.活动时间：</span>
+				<span>2016年6月16日0时~7月4日24时</span>
+			</p>	
+			<p>
+				<span class="fsbd">2.活动福利：</span>
+			</p>
+			<p>
+				<span class="fsbd">①入金福利：</span>
+				<span >在6月16日0时~6月30日24时期间入金，且在活动时间内不出金的用户，享相当于年化4%收益的现金红包；用户单笔（或累积）入金不少于20万（含20万），多次入金的按实际持金天数计息，每个用户（按身份证）入金限1000万（含1000万），超 出部分不享本次活动福利；（注：在6月1日0时~6月15日24时期间已入金，且在活动时间内不出金的用户同享最多12天入金福利，交易福利除外）；</span>
+			</p>
+			<p>
+				<span class="fsbd">②交易福利：</span>
+				<span>在6月16日0时~7月4日24时期间交易2次以上，且单笔（或累计）交易额为10万（含）~500万之间，另加赠相当于年化5%收益的现金红包，超出此范围不享本次活动福利；例：王先生6月3日入金50万，6月20日入金50万，6月20日交易50万，则王先生福利=入金福利+交易福利=【50万*（4%/365天*12天）+50万*（4%/365天*10天）】+【50万*（5%/365天*10天）】；</span>
+			</p>
+			<p>
+				<span class="fsbd">3.计息方式：</span>
+				<span>按实际入金到账时间或交易时间的T+1日计息（仅限交易日）；例：王先生6月20日入金或交易，则在6月21日开始计算福利；</span>
+			</p>
+			<p>
+				<span class="fsbd">4.存续周期：</span>活动时间内不得出金，否则不论金额多少均视自动放弃所有现金福利;
+			</p>
+			<p>
+				<span class="fsbd">5.福利发放：</span>活动结束后顺延10个交易日后分批发放；
+			</p>
+			<p>
+				<span class="fsbd">6.报名方式：</span>联系直播室在线QQ客服进行报名；本次活动最终解释权归壹银财富所有；
+			</p>
+			<p><span class="fsbd">7.数据统计：</span><span>入金截止到6月30日18时；交易截止到7月4日24时。</span></p>
+			<p><span class="fsbd">本次活动最终解释权归壹银财富所有</span></p>	
+         </div>
+	</div>
+</div>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+	$(function(){
+		$('.inner_bouble_type_choose>label').click(function(){
+			$('.inner_bouble_type_choose>label>input').removeClass('label_checked');
+			$(this).children('input').addClass('label_checked');
+			$('.hongnbao_num_sum_word').html('0');
+			$('.hongnbao_num_input').val('入金和交易总额');
+		})
+
+		$('.hongnbao_num_input').bind('input propertychange',function(){
+			var hongnbao_num_input_value = $('.hongnbao_num_input').val();
+			var hongnbao_num_sum_word_html = 0 ;
+			var input_checked_id = $('.inner_bouble_type_choose>label>input:checked').attr('id');
+			if(input_checked_id == 'rujin'){
+				if(hongnbao_num_input_value < 200000){
+					hongnbao_num_sum_word_html = 0;
+				}else{
+					hongnbao_num_sum_word_html = Math.round(hongnbao_num_input_value * 0.04 /365 *12);
+				}
+			}else{
+				if(hongnbao_num_input_value < 100000){
+					hongnbao_num_sum_word_html = 0;
+				}else{
+					hongnbao_num_sum_word_html = Math.round(hongnbao_num_input_value * 0.05 /365 *12);
+				}
+			}
+			$('.hongnbao_num_sum_word').html(hongnbao_num_sum_word_html);
+
+		})
+	})
+</script>
+</body>
+</html>
