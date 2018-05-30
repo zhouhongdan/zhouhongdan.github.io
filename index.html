@@ -1,110 +1,214 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name ="viewport" content ="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">  
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-	<meta name="renderer" content="webkit">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="msapplication-tap-highlight" content="no">
-	<meta name="apple-mobile-web-app-capable" content="yes" /><!-- 是否启用 WebApp 全屏模式 -->  
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /><!-- 设置状态栏的背景颜色 -->  
-	<title>抢双倍红包</title>
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/index.css">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta content="email=no" name="format-detection" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="description" content="短线高手，免费领牛股" />
+  <meta name="keywords" content="短线高手，免费领牛股" />
+  <script src="<?=Yii::getAlias("@web")?>/static/js/phone.js"></script>
+	<title>短线高手，免费领牛股</title>
+	<link rel="stylesheet" href="<?=Yii::getAlias("@web")?>/static/css/reset.css">
+	<link rel="stylesheet" href="<?=Yii::getAlias("@web")?>/static/css/index.css">
 </head>
 <body>
-<div class="hongbao_box">
-	<div class="banner"><img src="images/banner.png" alt=""></div>
-	<div class="inner_bouble_type_choose">
-		<label for="rujin" ><input type="radio" name="type" id="rujin" class="label_checked" checked="checked"><span class="fs18">入金</span></label>
-		<label for="trade"><input type="radio" name="type" id="trade"><span class="fs18">测试</span></label>
-	</div>
-	<div class="hongnbao_num fs16">
-		<span class="hongnbao_num_left">存续<br>金额</span>
-		<input type="text" name="" id="" value="入金和交易总额" class="hongnbao_num_input" onFocus="if(this.value == '入金和交易总额'){this.value = ''}" onBlur="if(this.value == ''){this.value= '入金和交易总额'}">
-		<div class="hongnbao_num_sum">
-			<span class="hongnbao_num_sum_word fs20">0</span>
-			<span>元</span>
+<input name="_csrf" type="hidden" id="_csrf" value="<?= Yii::$app->request->csrfToken ?>">
+<div class="main">
+		<!-- banner -->
+		<div class="banner">
+				<div class="banner1">
+						<img src="<?=Yii::getAlias("@web")?>/static/images/b_ling.png" alt="" class="banner1_ling animate_s_b">
+				</div>
+				<div class="banner2">
+						<div class="banner2_title"></div>
+						<div class="banner2_words">
+								<div class="inner_banner2_words">
+										<span>已有</span>
+										<span class="banner2_num">688</span>
+										<span>名客户成功领取</span>
+								</div>
+						</div>
+				</div>
 		</div>
-	</div>
-	<a href="javascript:;" class="hongbao_link_bg1">
-		<img src="images/hongbao.png" alt=""> 
-		<span class="fs20">立即预存</span>
-	</a>
-
-	<div class="hongbao_tip fs12">福利按12天计算，数据仅供参考，以系统实际核算为准。</div>
-	<div class="hongbao_rules fs14">
-		<div class="hongbao_rules_head">
-			<span class="hongbao_rules_head_cube"></span>
-			<span class="hongbao_rules_head_word">活动详情</span>
-			<span class="hongbao_rules_head_line"></span>
+		<!-- main_input -->
+		<div class="main_input">
+				<div class="inner_main_input_box">
+						<div class="main_input_tel">
+								<input type="text" name="input_tel_num" class="input_telNum tel1" placeholder="输入手机号">
+						</div>
+						<div class="main_input_code">
+								<div class="inner_code_box">
+										<input type="text" name="input_code_num" class="input_codeNum set_code1" placeholder="输入验证码">
+								</div>
+								<span class="input_codeBtn code_btn1">获取验证码</span>
+						</div>
+						<div class="main_input_EBtn animate_s_b submit_ajax1">立即领取</div>
+				</div>
 		</div>
-		<div class="hongbao_rules_contain">
-			<p>
-				<span class="fsbd">1.活动时间：</span>
-				<span>2016年6月16日0时~7月4日24时</span>
-			</p>	
-			<p>
-				<span class="fsbd">2.活动福利：</span>
-			</p>
-			<p>
-				<span class="fsbd">①入金福利：</span>
-				<span >在6月16日0时~6月30日24时期间入金，且在活动时间内不出金的用户，享相当于年化4%收益的现金红包；用户单笔（或累积）入金不少于20万（含20万），多次入金的按实际持金天数计息，每个用户（按身份证）入金限1000万（含1000万），超 出部分不享本次活动福利；（注：在6月1日0时~6月15日24时期间已入金，且在活动时间内不出金的用户同享最多12天入金福利，交易福利除外）；</span>
-			</p>
-			<p>
-				<span class="fsbd">②交易福利：</span>
-				<span>在6月16日0时~7月4日24时期间交易2次以上，且单笔（或累计）交易额为10万（含）~500万之间，另加赠相当于年化5%收益的现金红包，超出此范围不享本次活动福利；例：王先生6月3日入金50万，6月20日入金50万，6月20日交易50万，则王先生福利=入金福利+交易福利=【50万*（4%/365天*12天）+50万*（4%/365天*10天）】+【50万*（5%/365天*10天）】；</span>
-			</p>
-			<p>
-				<span class="fsbd">3.计息方式：</span>
-				<span>按实际入金到账时间或交易时间的T+1日计息（仅限交易日）；例：王先生6月20日入金或交易，则在6月21日开始计算福利；</span>
-			</p>
-			<p>
-				<span class="fsbd">4.存续周期：</span>活动时间内不得出金，否则不论金额多少均视自动放弃所有现金福利;
-			</p>
-			<p>
-				<span class="fsbd">5.福利发放：</span>活动结束后顺延10个交易日后分批发放；
-			</p>
-			<p>
-				<span class="fsbd">6.报名方式：</span>联系直播室在线QQ客服进行报名；本次活动最终解释权归壹银财富所有；
-			</p>
-			<p><span class="fsbd">7.数据统计：</span><span>入金截止到6月30日18时；交易截止到7月4日24时。</span></p>
-			<p><span class="fsbd">本次活动最终解释权归壹银财富所有</span></p>	
-         </div>
-	</div>
+		<!-- main_tequan -->
+		<div class="main_tequan">
+				<img src="<?=Yii::getAlias("@web")?>/static/images/t1.png" alt="" class="main_tequan_t">
+				<img src="<?=Yii::getAlias("@web")?>/static/images/tequan_img.png" alt="" class="main_tequan_img">
+		</div>
+		<!-- main_chat -->
+		<div class="main_chat">
+				<img src="<?=Yii::getAlias("@web")?>/static/images/t2.png" alt="" class="main_chat_t">
+				<img src="<?=Yii::getAlias("@web")?>/static/images/chat.png" alt="" class="main_chat_img">
+		</div>
+		<div class="main_foot_input">
+				<div class="main_foot_input_title"><span>四</span></div>
+				<div class="main_foot_input_box">
+						<div class="inner_main_input_box">
+								<div class="main_input_tel">
+										<input type="text" name="input_tel_num" class="input_telNum tel2" placeholder="输入手机号">
+								</div>
+								<div class="main_input_code">
+										<div class="inner_code_box">
+												<input type="text" name="input_code_num" class="input_codeNum set_code2" placeholder="输入验证码">
+										</div>
+										<span class="input_codeBtn code_btn2">获取验证码</span>
+								</div>
+						</div>
+				</div>
+				<div class="main_foot_EBtn animate_s_b submit_ajax2"></div>
+		</div>
+		<div class="foot">
+				<p>投资有风险，入市需谨慎</p>
+				<p>从事证券投资或期货交易，请通过合法证券期货经营机构进行。</p>
+		</div>
+		<div class="mask"></div>
+		<div class="pop_succus">
+				<span class="pop_succus_close"></span>
+		</div>
 </div>
-<script src="js/jquery-1.11.2.min.js"></script>
+
+<script src="<?=Yii::getAlias("@web")?>/static/js/jquery-1.11.2.min.js"></script>
 <script>
 	$(function(){
-		$('.inner_bouble_type_choose>label').click(function(){
-			$('.inner_bouble_type_choose>label>input').removeClass('label_checked');
-			$(this).children('input').addClass('label_checked');
-			$('.hongnbao_num_sum_word').html('0');
-			$('.hongnbao_num_input').val('入金和交易总额');
-		})
 
-		$('.hongnbao_num_input').bind('input propertychange',function(){
-			var hongnbao_num_input_value = $('.hongnbao_num_input').val();
-			var hongnbao_num_sum_word_html = 0 ;
-			var input_checked_id = $('.inner_bouble_type_choose>label>input:checked').attr('id');
-			if(input_checked_id == 'rujin'){
-				if(hongnbao_num_input_value < 200000){
-					hongnbao_num_sum_word_html = 0;
-				}else{
-					hongnbao_num_sum_word_html = Math.round(hongnbao_num_input_value * 0.04 /365 *12);
-				}
-			}else{
-				if(hongnbao_num_input_value < 100000){
-					hongnbao_num_sum_word_html = 0;
-				}else{
-					hongnbao_num_sum_word_html = Math.round(hongnbao_num_input_value * 0.05 /365 *12);
-				}
+			$('.pop_succus_close').click(function(){
+					$(this).parent('.pop_succus').hide();
+					$('.mask').hide();
+			})
+
+			//随机号生产
+			var init_num = 688;
+			var timer_random = null;
+			timer_random = setInterval(function(){
+				init_num += parseInt(Math.random()*3);
+				$('.banner2_num').html(init_num)
+				// console.log(init_num)
+			},2500)
+
+
+			var csrfToken = $('#_csrf').attr("value");
+			new code_fn('tel1','code_btn1','submit_ajax1','set_code1');
+			new code_fn('tel2','code_btn2','submit_ajax2','set_code2');
+
+			function code_fn(obj_tel_ele,obj_code_btn_ele,obj_submit_btn,obj_code_ele){
+				this.obj_tel = obj_tel_ele;
+				this.obj_code_btn = obj_code_btn_ele;
+				this.obj_submit_btn = obj_submit_btn;
+				this.code_ele = obj_code_ele ;
+				var ok = false;
+				var timer = null;
+
+				var _this = this;
+				//倒计时
+				$('.'+this.obj_code_btn).click(function(){
+					ok = _this.tel_yanzheng();
+					var num = 60;
+					if(ok){
+							clearInterval(timer)
+							timer = setInterval(function(){
+								num--;
+								if(num <= -1){
+										num = '请重新发送';
+										clearInterval(timer);
+								}
+								$('.'+_this.obj_code_btn).html(num);
+							},1000);
+							$.ajax({
+								url : '/promotion/send',
+								type : 'post',
+								dataType:'json',
+								data : {
+									'_csrf-frontend':csrfToken,
+									'mobile' : ok
+								},
+								success:function(msg){
+									 if(msg.code == '2001'){
+										alert("发送成功");
+									 }else{
+										alert(msg.message);
+									 }
+								}
+							});
+					}else{
+						 return;
+					}
+				});
+
+				//提交 验证码
+				$('.'+this.obj_submit_btn).click(function(){
+					var get_code = $('.'+_this.code_ele).val();
+					var get_tel = $('.'+_this.obj_tel).val();
+					var key_keyword = getQueryString('keyword');
+					var key_source = getQueryString('source');
+					// console.log(key_keyword,key_source)
+					if(get_code == ''){
+						alert('短信验证不能为空');
+						return false;
+					}else if( get_tel && get_code){
+						$.ajax({
+							url : '/promotion/create',
+							type : 'post',
+							dataType:'json',
+							data : {
+								'_csrf-frontend':csrfToken,
+								'mobile' : get_tel,
+								'code' : get_code,
+								'keyword': key_keyword,
+								'source':key_source
+							},
+							success:function(data){
+								if(data.code == '200'){
+									$('.pop_succus').show();
+									$('.mask').show();
+								}else{
+								   alert(data.message);
+								}
+							}
+						});
+					}
+				});
 			}
-			$('.hongnbao_num_sum_word').html(hongnbao_num_sum_word_html);
+			code_fn.prototype.tel_yanzheng = function(){
+				var get_tel = $('.'+this.obj_tel).val();
+				var tel_zz = /^[1][3,4,5,7,8][0-9]{9}$/;
+				if(get_tel == ''){
+					alert('手机号码不能为空');
+					return false;
+				}else if(!tel_zz.test(get_tel)){
+					alert('请输入正确的手机号');
+					$('.'+this.obj_tel).val('');
+					return false;
+				}else{
+					return get_tel;
+				}
+			};
 
-		})
 	})
+	function getQueryString(key){
+      var reg = new RegExp("(^|&)"+key+"=([^&]*)(&|$)");
+      var result = window.location.search.substr(1).match(reg);
+      return result?decodeURIComponent(result[2]):'none';
+	}
 </script>
+
 </body>
 </html>
