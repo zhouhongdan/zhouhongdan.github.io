@@ -10,10 +10,10 @@
   <meta name="msapplication-tap-highlight" content="no" />
   <meta name="description" content="短线高手，免费领牛股" />
   <meta name="keywords" content="短线高手，免费领牛股" />
-  <script src="js/phone.js"></script>
+  <script src="<?=Yii::getAlias("@web")?>/static/js/phone.js"></script>
 	<title>短线高手，免费领牛股</title>
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="<?=Yii::getAlias("@web")?>/static/css/reset.css">
+	<link rel="stylesheet" href="<?=Yii::getAlias("@web")?>/static/css/index.css">
 </head>
 <body>
 <input name="_csrf" type="hidden" id="_csrf" value="<?= Yii::$app->request->csrfToken ?>">
@@ -21,7 +21,7 @@
 		<!-- banner -->
 		<div class="banner">
 				<div class="banner1">
-						<img src="images/b_ling.png" alt="" class="banner1_ling animate_s_b">
+						<img src="<?=Yii::getAlias("@web")?>/static/images/b_ling.png" alt="" class="banner1_ling animate_s_b">
 				</div>
 				<div class="banner2">
 						<div class="banner2_title"></div>
@@ -51,13 +51,13 @@
 		</div>
 		<!-- main_tequan -->
 		<div class="main_tequan">
-				<img src="images/t1.png" alt="" class="main_tequan_t">
-				<img src="images/tequan_img.png" alt="" class="main_tequan_img">
+				<img src="<?=Yii::getAlias("@web")?>/static/images/t1.png" alt="" class="main_tequan_t">
+				<img src="<?=Yii::getAlias("@web")?>/static/images/tequan_img.png" alt="" class="main_tequan_img">
 		</div>
 		<!-- main_chat -->
 		<div class="main_chat">
-				<img src="images/t2.png" alt="" class="main_chat_t">
-				<img src="images/chat.png" alt="" class="main_chat_img">
+				<img src="<?=Yii::getAlias("@web")?>/static/images/t2.png" alt="" class="main_chat_t">
+				<img src="<?=Yii::getAlias("@web")?>/static/images/chat.png" alt="" class="main_chat_img">
 		</div>
 		<div class="main_foot_input">
 				<div class="main_foot_input_title"><span>四</span></div>
@@ -86,7 +86,7 @@
 		</div>
 </div>
 
-<script src="js/jquery-1.11.2.min.js"></script>
+<script src="<?=Yii::getAlias("@web")?>/static/js/jquery-1.11.2.min.js"></script>
 <script>
 	$(function(){
 
